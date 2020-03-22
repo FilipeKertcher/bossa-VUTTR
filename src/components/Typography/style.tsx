@@ -1,73 +1,85 @@
 import styled from "styled-components";
 
-const Header1 = styled.div`
+const Heading1 = styled.div`
   text-align: left;
-  font: Semibold 42px/50px Source Sans Pro;
+  font: 42px/50px ${(props: any) => props.theme.fonts.heading};
+  font-weight: ${(props: any) => props.theme.fontWeights.heading};
   letter-spacing: 0.84px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
 
-const Header2 = styled.div`
+const Heading2 = styled.div`
   text-align: left;
-  font: Semibold 36px/40px Source Sans Pro;
+  font: 36px/40px ${(props: any) => props.theme.fonts.heading};
+  font-weight: ${(props: any) => props.theme.fontWeights.heading};
   letter-spacing: 0.72px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
-const Header3 = styled.div`
+const Heading3 = styled.div`
   text-align: left;
-  font: Semibold 30px/36px Source Sans Pro;
+  font: 30px/36px ${(props: any) => props.theme.fonts.heading};
+  font-weight: ${(props: any) => props.theme.fontWeights.heading};
+
   letter-spacing: 0.6px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
-const Header4 = styled.div`
+const Heading4 = styled.div`
   text-align: left;
-  font: Semibold 26px/32px Source Sans Pro;
+  font: 26px/32px ${(props: any) => props.theme.fonts.heading};
+  font-weight: ${(props: any) => props.theme.fontWeights.heading};
+
   letter-spacing: 0.52px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
 
-const Header5 = styled.div`
+const Heading5 = styled.div`
   text-align: left;
-  font: Semibold 24px/30px Source Sans Pro;
+  font: 24px/30px ${(props: any) => props.theme.fonts.heading};
+  font-weight: ${(props: any) => props.theme.fontWeights.heading};
+
   letter-spacing: 0.48px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
 
 const Body = styled.div`
   text-align: left;
-  font: Regular 20px/26px Source Sans Pro;
+  font: 20px/26px ${(props: any) => props.theme.fonts.body};
+  font-weight: ${(props: any) => props.theme.fontWeights.body};
   letter-spacing: 0.4px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
 
 const BodySmall = styled.div`
   text-align: left;
-  font: Regular 18px/24px Source Sans Pro;
+  font: 18px/24px ${(props: any) => props.theme.fonts.body};
+  font-weight: ${(props: any) => props.theme.fontWeights.body};
   letter-spacing: 0.36px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
 `;
 
 const BodySmallest = styled.div`
   text-align: left;
-  font: Regular 16px/22px Source Sans Pro;
+  font: 16px/22px ${(props: any) => props.theme.fonts.body};
+  font-weight: ${(props: any) => props.theme.fontWeights.body};
   letter-spacing: 0.32px;
-  color: #170c3a;
+  color: ${(props: any) => (!!props.color ? props.color : "#170C3A")};
   opacity: 1;
+  vertical-align: middle;
 `;
 
 export {
-  Header1,
-  Header2,
-  Header3,
-  Header4,
-  Header5,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
   Body,
   BodySmall,
   BodySmallest
