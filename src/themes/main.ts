@@ -53,7 +53,15 @@ const main = {
     fontWeights: {
         body: 400,
         heading: 600
+    },
+    boxShadows:{
+        cardMainFlat:"",
+        cardMainElevation1:"0px 5px 7px #0000000D",
+        cardMainElevation2:"0px 10px 10px #0000000D",
+        cardMainElevation3:"0px 15px 20px #00000012",
+        cardMainElevation4:"0px 20px 25px #0000001A"
     } 
+
 
 }   
 

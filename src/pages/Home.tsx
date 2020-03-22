@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useContext } from "react"
+import Card from "components/Card"
 
 
 const Home = () => {
     return (
-        <div>
-            Hommer
-        </div>
+        <Card elevationLevel={2}>
+            <span>Hommer</span>
+        </Card>
+            
+        
     )
 }
 

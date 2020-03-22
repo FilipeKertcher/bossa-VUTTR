@@ -1,4 +1,4 @@
-import { Switch, Route, Router } from 'react-router-dom'
+import { Switch, Route, Router, Redirect } from 'react-router-dom'
 import React  from "react"
 
 import HomeScreen from 'pages/Home'
@@ -16,6 +16,7 @@ const Routes = ({}) => {
                 <Route exact path="/">
                     <HomeScreen />
                 </Route>
+                <Route component={() => <Redirect to="/"/> } />
             </Switch>
         </Router>      
     )
