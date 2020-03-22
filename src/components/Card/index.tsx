@@ -1,13 +1,14 @@
-import React, { useEffect, useState, useContext } from "react"
-import styled from 'styled-components';
-import  CardStyled  from './style';
+import React, { useEffect, useState, useContext, ReactNode } from "react";
+import styled from "styled-components";
+import CardStyled from "./style";
 
-const Card = (props:any) => {
-    return (
-        <CardStyled {...props}>
-            {props.children}
-        </CardStyled>
-    )
+interface ICard {
+  elevationLevel?: 1 | 2 | 3 | 4;
+  children?: ReactNode;
 }
 
-export default Card
+const Card = (props: ICard) => {
+  return <CardStyled {...props}>{props.children}</CardStyled>;
+};
+
+export default Card;
