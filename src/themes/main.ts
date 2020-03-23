@@ -52,7 +52,9 @@ const main = {
   },
   fontWeights: {
     body: 400,
-    heading: 600
+    heading: 600,
+    bold: 600,
+    semibold: 400
   },
   boxShadows: {
     cardMainFlat: "",

@@ -6,7 +6,7 @@ interface IInput {
   onChange: (value: string) => void;
   type?: string;
   value: string;
-  label: string;
+  label?: string;
   required?: boolean;
   placeholder?: string;
 }
@@ -21,9 +21,11 @@ const Input = ({
 }: IInput) => {
   return (
     <InputWraper>
-      <Typography tag={"span"} variant={"BodySmall"} color={"ink"}>
-        {`${label}  ${!!required ? "*" : ""}`}
-      </Typography>
+      {!!label && (
+        <Typography tag={"span"} variant={"BodySmall"} color={"ink"}>
+          {`${label}  ${!!required ? "*" : ""}`}
+        </Typography>
+      )}
       <InputStyled
         value={value}
         required={required}

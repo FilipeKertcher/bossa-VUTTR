@@ -33,7 +33,6 @@ const InputWraper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 10px;
 `;
 
 export { InputStyled, InputWraper };
