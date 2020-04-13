@@ -82,5 +82,5 @@ export {
   Heading5,
   Body,
   BodySmall,
-  BodySmallest
+  BodySmallest,
 };

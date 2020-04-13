@@ -28,11 +28,6 @@ const InputStyled = styled.input`
   }
 `;
 
-const InputWraper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-`;
+const InputWraper = styled.div``;
 
 export { InputStyled, InputWraper };

@@ -44,25 +44,25 @@ const main = {
     darkTeal: "#2BAFD8",
     teal: "#30C3FC",
     lightTeal: "#98E1FE",
-    lighterTeal: "#EAF9FF"
+    lighterTeal: "#EAF9FF",
   },
   fonts: {
     body: "Source Sans Pro, sans-serif",
-    heading: "Source Sans Pro, sans-serif"
+    heading: "Source Sans Pro, sans-serif",
   },
   fontWeights: {
     body: 400,
     heading: 600,
     bold: 600,
-    semibold: 400
+    semibold: 400,
   },
   boxShadows: {
     cardMainFlat: "",
     cardMainElevation1: "0px 5px 7px #0000000D",
     cardMainElevation2: "0px 10px 10px #0000000D",
     cardMainElevation3: "0px 15px 20px #00000012",
-    cardMainElevation4: "0px 20px 25px #0000001A"
-  }
+    cardMainElevation4: "0px 20px 25px #0000001A",
+  },
 };
 
 export default main;

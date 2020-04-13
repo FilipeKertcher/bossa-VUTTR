@@ -17,28 +17,32 @@ const Input = ({
   label,
   type = "text",
   required = false,
-  placeholder
+  placeholder,
 }: IInput) => {
   return (
     <InputWraper>
-      {!!label && (
-        <Typography tag={"span"} variant={"BodySmall"} color={"ink"}>
-          {`${label}  ${!!required ? "*" : ""}`}
-        </Typography>
-      )}
-      <InputStyled
-        value={value}
-        required={required}
-        placeholder={
-          !!placeholder
-            ? placeholder
-            : !!required
-            ? "Required..."
-            : "Optional..."
-        }
-        onChange={(e: any) => onChange(e.target.value)}
-        type={type}
-      />
+      <div className={"inline-block"}>
+        {!!label && (
+          <Typography tag={"span"} variant={"BodySmall"} color={"ink"}>
+            {`${label}  ${!!required ? "*" : ""}`}
+          </Typography>
+        )}
+      </div>
+      <div className={"block"}>
+        <InputStyled
+          value={value}
+          required={required}
+          placeholder={
+            !!placeholder
+              ? placeholder
+              : !!required
+              ? "Required..."
+              : "Optional..."
+          }
+          onChange={(e: any) => onChange(e.target.value)}
+          type={type}
+        />
+      </div>
     </InputWraper>
   );
 };
