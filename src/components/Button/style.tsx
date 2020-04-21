@@ -108,8 +108,52 @@ const returnColorBasedOnIntent = (
     },
   };
 
-  const found = colors[variant][intent] || colors["Primary"]["Neutral"];
-  return found[mode];
+  const foundVariant = colors[variant] || colors["Primary"];
+
+  const foundIntent = foundVariant[intent] || foundVariant["Neutral"];
+  return foundIntent[mode];
+};
+
+const returnButtonPadding = (
+  variant: keyof typeof ButtonVariants,
+  noPadding: boolean
+) => {
+  if (!!noPadding)
+    return {
+      left: "0px",
+      right: "0px",
+      top: "0px",
+      bottom: "0px",
+    };
+
+  const config = {
+    Primary: {
+      left: "26px",
+      right: "26px",
+      top: "13px",
+      bottom: "13px",
+    },
+    Secondary: {
+      left: "26px",
+      right: "26px",
+      top: "13px",
+      bottom: "13px",
+    },
+    Terciary: {
+      left: "18px",
+      right: "18px",
+      top: "6px",
+      bottom: "6px",
+    },
+    Quartiary: {
+      left: "26px",
+      right: "26px",
+      top: "13px",
+      bottom: "13px",
+    },
+  };
+
+  return config[variant] || config["Primary"];
 };
 
 const ButtonStyled = styled.button`
@@ -119,10 +163,14 @@ const ButtonStyled = styled.button`
   border-radius: 5px;
   opacity: 1;
 
-  padding-right: ${(props: any) => (!!props.noPadding ? "0px" : "26px")};
-  padding-left: ${(props: any) => (!!props.noPadding ? "0px" : "26px")};
-  padding-top: ${(props: any) => (!!props.noPadding ? "0px" : "13px")};
-  padding-bottom: ${(props: any) => (!!props.noPadding ? "0px" : "13px")};
+  padding-right: ${(props: any) =>
+    returnButtonPadding(props.variant, props.noPadding).right};
+  padding-left: ${(props: any) =>
+    returnButtonPadding(props.variant, props.noPadding).left};
+  padding-top: ${(props: any) =>
+    returnButtonPadding(props.variant, props.noPadding).top};
+  padding-bottom: ${(props: any) =>
+    returnButtonPadding(props.variant, props.noPadding).bottom};
 
   height: auto;
   width: auto;

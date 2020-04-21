@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { FC, useState, useContext } from "react";
 import { InputStyled, InputWraper } from "./style";
 import Typography from "components/Typography";
 
-interface IInput {
+type IInput = {
   onChange: (e: any) => void;
   type?: string;
   value: string;
@@ -12,9 +12,9 @@ interface IInput {
   errorMessage?: string;
   onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   name?: string;
-}
+};
 
-const Input = ({
+const Input: FC<IInput> = ({
   onChange,
   value,
   label,

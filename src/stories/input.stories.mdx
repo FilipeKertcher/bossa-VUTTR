@@ -1,0 +1,31 @@
+import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Input from "../components/Input";
+
+<Meta title="Input" />
+
+Here's some _markdown_!;
+
+# Preview
+
+<Preview>
+  <Story name="Optional">
+    <Input
+      value={""}
+      onChange={() => action("Input value changed")}
+      label="Optional"
+    />
+  </Story>
+  <Story name="Required">
+    <Input
+      value={""}
+      required
+      onChange={() => action("Input value changed")}
+      label="Required"
+    />
+  </Story>
+</Preview>
+
+# Props
+
+<Props of={Input} />
