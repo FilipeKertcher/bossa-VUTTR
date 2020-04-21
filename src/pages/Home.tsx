@@ -5,8 +5,9 @@ import Input from "components/Input";
 import ToolInformation from "components/ToolInformation";
 import ITool from "Models/tool";
 import Button from "components/Button";
-import { Modal, ModalContent, ModalActions } from "components/Modal";
+import { Modal } from "components/Modal";
 import AddTool from "components/AddTool";
+import { ModalContent } from "components/Modal/style";
 
 const Home = () => {
   const [toolsArray, setToolsArray] = useState<ITool[]>([

@@ -1,35 +1,27 @@
 import styled from "styled-components";
 
-const InputStyled = styled.input`
-  background: #f5f4f6 0% 0% no-repeat padding-box;
-  border: 1px solid #ebeaed;
-  border-radius: 5px;
-  opacity: 1;
-
-  text-align: left;
-  font: 20px/26px Source Sans Pro;
-  letter-spacing: 0.4px;
-  opacity: 1;
+const Bullet = styled.button`
+  border-radius: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   padding-left: 10px;
-  padding-top: 13px;
-  padding-bottom: 12px;
-  width: 100%;
-
-  &::placeholder {
-    font: Regular 20px/26px Source Sans Pro;
-    letter-spacing: 0.4px;
-    color: #b1adb9;
-    opacity: 1;
-  }
-
-  &:active,
+  padding-right: 10px;
+  background-color: ${(props) => props.theme.colors.ink};
+  color: ${(props) => props.theme.colors.white};
   &:focus {
-    color: #170c3a;
-    background: #ebeaed;
     outline: 0;
   }
 `;
 
-const InputWraper = styled.div``;
-
-export { InputStyled, InputWraper };
+const InfoWrapper = styled.div`
+  align-self: flex-end;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 16px;
+  margin-top: 10px;
+  font-size: 12px;
+  border: 1px solid ${(props: any) => props.theme.colors.ink};
+`;
+export { InfoWrapper, Bullet };
