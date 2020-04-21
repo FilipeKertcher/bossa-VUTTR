@@ -1,6 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { checkA11y } from "@storybook/addon-a11y";
+// @ts-ignore
+
 import { withInfo } from "@storybook/addon-info";
 
 import TextArea from "./index";

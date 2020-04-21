@@ -46,7 +46,7 @@ const TagInput = ({ tags = [], onChange }: IToolInformation) => {
         name="toolLink"
         value={tagName}
         errorMessage={errorMessage}
-        onChange={(e) => setTagName(e.target.value)}
+        onChange={(e: any) => setTagName(e.target.value)}
         onKeyPress={handleKeyPress}
       />
       <InfoWrapper className={"tooltip"}>

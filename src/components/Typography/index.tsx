@@ -27,7 +27,9 @@ type ITypography = {
   tag: any;
   children: ReactNode;
   color?: keyof typeof mainTheme.colors;
+  style?: any;
   variant: keyof typeof variant_types;
+  className?: any;
 };
 
 const Typography: FC<ITypography> = ({

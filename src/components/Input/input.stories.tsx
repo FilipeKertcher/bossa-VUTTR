@@ -1,7 +1,11 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { checkA11y } from "@storybook/addon-a11y";
+// @ts-ignore
+
 import { withInfo } from "@storybook/addon-info";
+// @ts-ignore
+
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
 import Input from "components/Input";

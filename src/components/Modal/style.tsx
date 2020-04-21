@@ -43,6 +43,14 @@ const ModalActions = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+
+  @media (max-width: 576px) {
+    justify-content: space-between;
+  }
+
+  & > button:not(:first-child) {
+    margin-left: 10px;
+  }
 `;
 
 const ModalContent = styled.div`

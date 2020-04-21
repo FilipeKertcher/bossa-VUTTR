@@ -25,20 +25,17 @@ const Home = () => {
     },
   ]);
   const [searchField, setSearchField] = useState("");
-  const [addToolModalVisible, setAddToolModalVisible] = useState(true);
+  const [addToolModalVisible, setAddToolModalVisible] = useState(false);
 
   return (
     <div
-      className={"flex flex-col items-stretch justify-around"}
-      style={{
-        width: "60%",
-      }}
+      className={"flex flex-col items-stretch justify-around w-11/12 md:w-3/4"}
     >
       <div className={"flex flex-row justify-between items-end"}>
         <Input
           value={searchField}
-          onChange={setSearchField}
-          placeholder={"search"}
+          onChange={(e: any) => setSearchField(e.target.value)}
+          placeholder={"Pesquisar"}
         />
 
         <Button

@@ -1,10 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { checkA11y } from "@storybook/addon-a11y";
+// @ts-ignore
+
 import { withInfo } from "@storybook/addon-info";
 
 import Button from "components/Button";
 import Typography from "components/Typography";
+// @ts-ignore
+
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
 const story = storiesOf("Components | Button", module)
@@ -126,5 +130,3 @@ story.add("Quartiary", () => (
     </div>
   </div>
 ));
-
-story.add("Props", () => <Props of={Button} />);
