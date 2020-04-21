@@ -60,6 +60,7 @@ const Input = ({
           }
           onChange={onChange}
           type={type}
+          {...{ errorMessage }}
           {...restProps}
         />
       </div>

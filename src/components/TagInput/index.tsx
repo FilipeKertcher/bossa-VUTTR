@@ -1,11 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState } from "react";
 import Typography from "components/Typography";
-import mainTheme from "themes/main";
-import ITool from "Models/tool";
 import Input from "components/Input";
-import styled from "styled-components";
-import { ReactComponent as InfoButton } from "assets/icons/info-clear.svg";
-import Button from "components/Button";
 import Card from "components/Card";
 import { InfoWrapper, Bullet } from "./style";
 
@@ -63,13 +58,13 @@ const TagInput = ({ tags = [], onChange }: IToolInformation) => {
         >
           <div className={"m-2 text-justify"}>
             <Typography tag={"span"} variant={"BodySmallest"}>
-              Para criar uma tag, digite o nome e pressione{" "}
+              <strong>Para criar uma tag: </strong> digite o nome e pressione{" "}
               <strong>enter</strong> para salvar.
             </Typography>
             <br />
             <br />
             <Typography tag={"span"} variant={"BodySmallest"}>
-              Para remover uma tag, clique em cima dela!
+              <strong>Para remover uma tag:</strong> clique em cima dela!
             </Typography>
           </div>
         </Card>

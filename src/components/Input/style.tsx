@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 const InputStyled = styled.input`
-  background: #f5f4f6 0% 0% no-repeat padding-box;
-  border: 1px solid #ebeaed;
+  background: ${(props: any) =>
+      !!props.errorMessage ? props.theme.colors.mostLightestRed : "#f5f4f6"}
+    0% 0% no-repeat padding-box;
+  border: 1px solid
+    ${(props: any) =>
+      !!props.errorMessage ? props.theme.colors.red : " #ebeaed"};
   border-radius: 5px;
   opacity: 1;
 
@@ -18,13 +22,15 @@ const InputStyled = styled.input`
   &::placeholder {
     font: Regular 20px/26px Source Sans Pro;
     letter-spacing: 0.4px;
-    color: #b1adb9;
+    color: ${(props: any) =>
+      !!props.errorMessage ? props.theme.colors.red : "#b1adb9"};
     opacity: 1;
   }
 
   &:active,
   &:focus {
-    color: #170c3a;
+    color: ${(props: any) =>
+      !!props.errorMessage ? props.theme.colors.red : "#170c3a"};
     background: #ebeaed;
     outline: 0;
   }

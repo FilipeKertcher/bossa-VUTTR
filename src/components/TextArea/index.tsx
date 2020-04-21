@@ -61,6 +61,7 @@ const TextArea = ({
               : "Optional..."
           }
           onChange={onChange}
+          {...{ errorMessage }}
         />
       </div>
       {!!errorMessage && (
