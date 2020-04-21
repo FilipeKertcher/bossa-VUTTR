@@ -3,3 +3,25 @@ body {
   height: 100vh;
   overflow-y: hidden;
 }
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+@media (max-width: 576px) {
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    transform: translateY(20px) translateX(-30%);
+    right: auto;
+  }
+}

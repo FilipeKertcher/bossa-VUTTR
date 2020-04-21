@@ -119,10 +119,10 @@ const ButtonStyled = styled.button`
   border-radius: 5px;
   opacity: 1;
 
-  padding-right: 26px;
-  padding-left: 26px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-right: ${(props: any) => (!!props.noPadding ? "0px" : "26px")};
+  padding-left: ${(props: any) => (!!props.noPadding ? "0px" : "26px")};
+  padding-top: ${(props: any) => (!!props.noPadding ? "0px" : "13px")};
+  padding-bottom: ${(props: any) => (!!props.noPadding ? "0px" : "13px")};
 
   height: auto;
   width: auto;

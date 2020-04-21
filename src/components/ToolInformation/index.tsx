@@ -20,11 +20,12 @@ const ToolInformation = ({ item }: IToolInformation) => {
         </Typography>
       </div>
       <div className={"flex-row"}>
-        {item.tags.map((tag) => (
+        {item.tags.map((tag, index) => (
           <Typography
             tag={"span"}
             variant={"BodySmallest"}
             color={"darkGreen"}
+            key={index}
             style={{ marginLeft: 10, fontWeight: mainTheme.fontWeights.bold }}
           >
             #{tag}

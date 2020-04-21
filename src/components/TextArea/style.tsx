@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const InputStyled = styled.input`
+const TextAreaStyled = styled.textarea`
   background: #f5f4f6 0% 0% no-repeat padding-box;
   border: 1px solid #ebeaed;
   border-radius: 5px;
@@ -30,6 +30,6 @@ const InputStyled = styled.input`
   }
 `;
 
-const InputWraper = styled.div``;
+const TextAreaWraper = styled.div``;
 
-export { InputStyled, InputWraper };
+export { TextAreaStyled, TextAreaWraper };

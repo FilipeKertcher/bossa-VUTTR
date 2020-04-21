@@ -7,6 +7,7 @@ interface IButton {
   intent?: keyof typeof ButtonIntent;
   disabled?: boolean;
   onClick: () => void;
+  noPadding?: boolean;
 }
 const Button = ({
   children,
@@ -14,10 +15,11 @@ const Button = ({
   intent = "Neutral",
   disabled = false,
   onClick,
+  noPadding = false,
 }: IButton) => {
   return (
     <ButtonStyled
-      {...{ variant, intent }}
+      {...{ variant, intent, noPadding }}
       disabled={disabled}
       onClick={onClick}
     >

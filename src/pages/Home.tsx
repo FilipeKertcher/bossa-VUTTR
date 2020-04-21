@@ -5,8 +5,8 @@ import Input from "components/Input";
 import ToolInformation from "components/ToolInformation";
 import ITool from "Models/tool";
 import Button from "components/Button";
-import AddToolModal from "components/Modal";
-import Modal from "components/Modal";
+import { Modal, ModalContent, ModalActions } from "components/Modal";
+import AddTool from "components/AddTool";
 
 const Home = () => {
   const [toolsArray, setToolsArray] = useState<ITool[]>([
@@ -24,7 +24,7 @@ const Home = () => {
     },
   ]);
   const [searchField, setSearchField] = useState("");
-  const [addToolModalVisible, setAddToolModalVisible] = useState(false);
+  const [addToolModalVisible, setAddToolModalVisible] = useState(true);
 
   return (
     <div
@@ -45,24 +45,28 @@ const Home = () => {
           variant={"Secondary"}
           onClick={() => setAddToolModalVisible(true)}
         >
-          <Typography
-            tag={"span"}
-            variant={"BodySmallest"}
-            color={"lightInk"}
-            style={{ fontWeight: "bold" }}
-          >
+          <Typography tag={"span"} variant={"BodySmallest"}>
             Adicionar
           </Typography>
         </Button>
       </div>
-      {toolsArray.map((item) => (
-        <div style={{ marginTop: 10 }}>
+      {toolsArray.map((item, index) => (
+        <div key={index} style={{ marginTop: 10 }}>
           <Card elevationLevel={4}>
             <ToolInformation item={item} />
           </Card>
         </div>
       ))}
-      {!!addToolModalVisible && <Modal onClose={() => {}}>TESTE</Modal>}
+      {!!addToolModalVisible && (
+        <Modal
+          title={"Adicionar Ferramenta"}
+          onClose={() => setAddToolModalVisible(false)}
+        >
+          <ModalContent>
+            <AddTool />
+          </ModalContent>
+        </Modal>
+      )}
     </div>
   );
 };

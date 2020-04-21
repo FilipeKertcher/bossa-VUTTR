@@ -1,32 +1,32 @@
 import React, { useEffect, useState, useContext } from "react";
-import { InputStyled, InputWraper } from "./style";
+import { TextAreaStyled, TextAreaWraper } from "./style";
 import Typography from "components/Typography";
 
 interface IInput {
   onChange: (e: any) => void;
-  type?: string;
   value: string;
   label?: string;
   required?: boolean;
   placeholder?: string;
   errorMessage?: string;
-  onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  rows?: number;
+  cols?: number;
   name?: string;
 }
 
-const Input = ({
+const TextArea = ({
   onChange,
   value,
   label,
   errorMessage,
-  name,
-  type = "text",
   required = false,
   placeholder,
-  ...restProps
+  rows = 5,
+  cols = 20,
+  name,
 }: IInput) => {
   return (
-    <InputWraper>
+    <TextAreaWraper>
       <div className={"inline-block"}>
         {!!label && (
           <>
@@ -47,10 +47,12 @@ const Input = ({
         )}
       </div>
       <div className={"block"}>
-        <InputStyled
-          name={name}
+        <TextAreaStyled
           value={value}
           required={required}
+          name={name}
+          cols={cols}
+          rows={rows}
           placeholder={
             !!placeholder
               ? placeholder
@@ -59,8 +61,6 @@ const Input = ({
               : "Optional..."
           }
           onChange={onChange}
-          type={type}
-          {...restProps}
         />
       </div>
       {!!errorMessage && (
@@ -70,8 +70,8 @@ const Input = ({
           </Typography>
         </div>
       )}
-    </InputWraper>
+    </TextAreaWraper>
   );
 };
 
-export default Input;
+export default TextArea;

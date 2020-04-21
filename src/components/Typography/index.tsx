@@ -7,7 +7,7 @@ import {
   Heading5,
   Body,
   BodySmall,
-  BodySmallest
+  BodySmallest,
 } from "./style";
 
 import mainTheme from "themes/main";
@@ -20,18 +20,24 @@ enum variant_types {
   "Heading5",
   "Body",
   "BodySmall",
-  "BodySmallest"
+  "BodySmallest",
 }
 
 interface ITypography {
   tag: any;
   children: ReactNode;
-  color: keyof typeof mainTheme.colors;
+  color?: keyof typeof mainTheme.colors;
   variant: keyof typeof variant_types;
   style?: any;
 }
 
-const Typography = ({ tag, children, variant, color, style }: ITypography) => {
+const Typography = ({
+  tag,
+  children,
+  variant,
+  color = "ink",
+  style,
+}: ITypography) => {
   const selectedColor: string = !!color?.includes("#")
     ? color
     : mainTheme.colors[color];
@@ -83,7 +89,7 @@ const Typography = ({ tag, children, variant, color, style }: ITypography) => {
       <Heading1 as={tag} color={selectedColor} style={stl}>
         {children}
       </Heading1>
-    )
+    ),
   };
 
   return component[variant] || component["default"];
