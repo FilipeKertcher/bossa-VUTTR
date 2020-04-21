@@ -5,6 +5,7 @@ import { withInfo } from "@storybook/addon-info";
 
 import Button from "components/Button";
 import Typography from "components/Typography";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
 const story = storiesOf("Components | Button", module)
   .addDecorator(checkA11y)
@@ -125,3 +126,5 @@ story.add("Quartiary", () => (
     </div>
   </div>
 ));
+
+story.add("Props", () => <Props of={Button} />);

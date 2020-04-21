@@ -1,6 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 import Button from "../components/Button";
+import {ButtonVariants,ButtonIntent} from "../components/Button/style.tsx";
 
 <Meta title="Button" />
 
@@ -28,3 +29,16 @@ Here's some _markdown_!;
 # Props
 
 <Props of={Button} />
+
+## Variants
+
+  <div> {
+    Object.values(ButtonVariants).filter(x => typeof x === 'string').map(variant => (<pre>{variant}</pre>))
+  } </div>
+
+## Intents
+
+  <div> {
+    Object.values(ButtonIntent).filter(x => typeof x === 'string').map(intent => (<pre>{intent}</pre>))
+  } </div>
+ 

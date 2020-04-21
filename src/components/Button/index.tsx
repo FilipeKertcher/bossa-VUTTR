@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useContext, ReactNode } from "react";
-import ButtonStyled, { ButtonIntent, ButtonVariants } from "./style";
+import React, { FC, ReactNode } from "react";
+import { ButtonIntent, ButtonVariants, ButtonStyled } from "./style";
 
 interface IButton {
   children?: ReactNode;
@@ -9,7 +9,7 @@ interface IButton {
   onClick: () => void;
   noPadding?: boolean;
 }
-const Button = ({
+const Button: FC<IButton> = ({
   children,
   variant = "Primary",
   intent = "Neutral",

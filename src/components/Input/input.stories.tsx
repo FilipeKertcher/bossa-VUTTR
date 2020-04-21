@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { checkA11y } from "@storybook/addon-a11y";
 import { withInfo } from "@storybook/addon-info";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
 
 import Input from "components/Input";
 
@@ -94,3 +95,4 @@ story.add("Required", () => (
     </div>
   </div>
 ));
+story.add("Props", () => <Props of={Input} />);

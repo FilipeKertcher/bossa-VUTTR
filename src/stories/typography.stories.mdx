@@ -1,0 +1,57 @@
+import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Typography from "../components/Typography/index.tsx";
+
+<Meta title="Typography" />
+
+Here's some _markdown_!;
+
+# Preview
+
+<Preview>
+  <Story name="Heading1">
+    <Typography tag={"span"} variant={"Heading1"}>
+        Heading1
+      </Typography>
+  </Story>
+   <Story name="Heading2">
+    <Typography tag={"span"} variant={"Heading2"}>
+        Heading2
+      </Typography>
+  </Story>
+   <Story name="Heading3">
+    <Typography tag={"span"} variant={"Heading3"}>
+        Heading3
+      </Typography>
+  </Story>
+   <Story name="Heading4">
+    <Typography tag={"span"} variant={"Heading4"}>
+        Heading4
+      </Typography>
+  </Story>
+   <Story name="Heading5">
+    <Typography tag={"span"} variant={"Heading5"}>
+        Heading5
+      </Typography>
+  </Story>
+  <Story name="Body">
+    <Typography tag={"span"} variant={"Body"}>
+        Heading6
+      </Typography>
+  </Story>
+   <Story name="BodySmall">
+    <Typography tag={"span"} variant={"BodySmall"}>
+        Heading6
+      </Typography>
+  </Story>
+   <Story name="BodySmallest">
+    <Typography tag={"span"} variant={"BodySmallest"}>
+        Heading7
+      </Typography>
+  </Story>
+   
+</Preview>
+
+# Props
+
+<Props of={Typography} />

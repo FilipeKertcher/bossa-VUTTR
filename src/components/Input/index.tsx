@@ -3,7 +3,7 @@ import { InputStyled, InputWraper } from "./style";
 import Typography from "components/Typography";
 
 type IInput = {
-  onChange: (e: any) => void;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
   type?: string;
   value: string;
   label?: string;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export enum ButtonIntent {
+enum ButtonIntent {
   "Neutral",
   "Danger",
   "Success",
 }
 
-export enum ButtonVariants {
+enum ButtonVariants {
   "Primary",
   "Secondary",
   "Terciary",
@@ -196,4 +196,4 @@ const ButtonStyled = styled.button`
   }
 `;
 
-export default ButtonStyled;
+export { ButtonStyled, ButtonIntent, ButtonVariants };

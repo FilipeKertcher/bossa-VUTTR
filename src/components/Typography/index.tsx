@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, FC } from "react";
 import {
   Heading1,
   Heading2,
@@ -23,70 +23,67 @@ enum variant_types {
   "BodySmallest",
 }
 
-interface ITypography {
+type ITypography = {
   tag: any;
   children: ReactNode;
   color?: keyof typeof mainTheme.colors;
   variant: keyof typeof variant_types;
-  style?: any;
-}
+};
 
-const Typography = ({
+const Typography: FC<ITypography> = ({
   tag,
   children,
   variant,
   color = "ink",
-  style,
+  ...restProps
 }: ITypography) => {
   const selectedColor: string = !!color?.includes("#")
     ? color
     : mainTheme.colors[color];
 
-  const stl = !!style ? style : {};
-
   const component = {
     Heading1: (
-      <Heading1 as={tag} color={selectedColor} style={stl}>
+      <Heading1 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading1>
     ),
     Heading2: (
-      <Heading2 as={tag} color={selectedColor} style={stl}>
+      <Heading2 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading2>
     ),
     Heading3: (
-      <Heading3 as={tag} color={selectedColor} style={stl}>
+      <Heading3 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading3>
     ),
     Heading4: (
-      <Heading4 as={tag} color={selectedColor} style={stl}>
+      <Heading4 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading4>
     ),
     Heading5: (
-      <Heading5 as={tag} color={selectedColor} style={stl}>
+      <Heading5 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading5>
     ),
     Body: (
-      <Body as={tag} color={selectedColor} style={stl}>
+      <Body as={tag} color={selectedColor} {...restProps}>
         {children}
       </Body>
     ),
     BodySmall: (
-      <BodySmall as={tag} color={selectedColor} style={stl}>
+      <BodySmall as={tag} color={selectedColor} {...restProps}>
         {children}
       </BodySmall>
     ),
     BodySmallest: (
-      <BodySmallest as={tag} color={selectedColor} style={stl}>
+      <BodySmallest as={tag} color={selectedColor} {...restProps}>
         {children}
       </BodySmallest>
     ),
     default: (
-      <Heading1 as={tag} color={selectedColor} style={stl}>
+      <Heading1 as={tag} color={selectedColor} {...restProps}>
         {children}
       </Heading1>
     ),
