@@ -19,15 +19,6 @@ const App = () => {
   return (
     <ThemeProvider theme={mainTheme}>
       <Container>
-        <div>
-          <Typography tag={"h1"} variant={"Heading2"} color={"darkerPurple"}>
-            VUTTR
-          </Typography>
-          <Typography tag={"h2"} variant={"Heading4"} color={"darkerPurple"}>
-            Very Useful Tools to Remember
-          </Typography>
-        </div>
-
         <Routes />
       </Container>
     </ThemeProvider>
