@@ -17,7 +17,7 @@ const ToolInformation = ({ item }: IToolInformation) => {
   return (
     <div className={"flex flex-col"}>
       <div className={"flex flex-row justify-between"}>
-        <Typography tag={"h4"} variant={"Heading4"} color={"darkGreen"}>
+        <Typography tag={"h4"} variant={"Heading4"} color={"ink"}>
           {item.title}
         </Typography>
 
@@ -40,8 +40,8 @@ const ToolInformation = ({ item }: IToolInformation) => {
           </div>
         </Button>
       </div>
-      <div className={"flex-row"}>
-        <Typography tag={"span"} variant={"Body"} color={"darkGreen"}>
+      <div className={"flex-row my-2"}>
+        <Typography tag={"span"} variant={"Body"} color={"lightInk"}>
           {item.description}
         </Typography>
       </div>
@@ -52,7 +52,10 @@ const ToolInformation = ({ item }: IToolInformation) => {
             variant={"BodySmallest"}
             color={"darkGreen"}
             key={index}
-            style={{ marginLeft: 10, fontWeight: mainTheme.fontWeights.bold }}
+            style={{
+              marginLeft: index > 0 ? 10 : 0,
+              fontWeight: mainTheme.fontWeights.bold,
+            }}
           >
             #{tag}
           </Typography>
