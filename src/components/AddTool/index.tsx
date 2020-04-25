@@ -43,8 +43,8 @@ const AddTool = ({}) => {
               ? formik.errors.toolName
               : ""
           }
-          placeholder={"Cole aqui o link para essa ferramenta"}
-          label={"Link da Ferramenta"}
+          placeholder={"Digite o nome da ferramenta"}
+          label={"Nome da Ferramenta"}
           required
           name="toolName"
           value={formik.values.toolName}
@@ -58,7 +58,7 @@ const AddTool = ({}) => {
               ? formik.errors.toolLink
               : ""
           }
-          placeholder={"Cole aqui o link para essa ferramenta"}
+          placeholder={"Cole aqui o link para ferramenta"}
           label={"Link da Ferramenta"}
           required
           name="toolLink"

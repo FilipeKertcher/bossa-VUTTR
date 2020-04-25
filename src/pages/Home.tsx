@@ -61,6 +61,10 @@ const Home = () => {
     @media (min-width: 768px) {
       max-height: 600px;
     }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   `;
 
   return (
