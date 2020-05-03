@@ -6,8 +6,14 @@ import Typography from "components/Typography";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import TagInput from "components/TagInput";
+import rootStore from "stores/rootStore";
+import ITool from "models/tool";
+import { ToolsReducerActions } from "stores/ducks/tools";
+import { useDispatch } from "react-redux";
+import { addTool } from "stores/ducks/tools/actions";
 
 const AddTool = ({}) => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       toolName: "",
@@ -24,7 +30,14 @@ const AddTool = ({}) => {
 
     onSubmit: async (values) => {
       try {
-        alert(JSON.stringify({ ...values, toolTags }, null, 2));
+        const payload: ITool = {
+          title: values.toolName,
+          link: values.toolLink,
+          description: values.toolDescription,
+          tags: toolTags,
+        };
+
+        dispatch(addTool(payload));
       } catch (error) {
         console.log("ERROR");
         console.log(error);

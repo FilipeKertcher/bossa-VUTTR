@@ -3,55 +3,31 @@ import Card from "components/Card";
 import Typography from "components/Typography";
 import Input from "components/Input";
 import ToolInformation from "components/ToolInformation";
-import ITool from "Models/tool";
+import ITool from "models/tool";
 import Button from "components/Button";
 import { Modal } from "components/Modal";
 import AddTool from "components/AddTool";
 import { ModalContent } from "components/Modal/style";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import { listTools } from "stores/ducks/tools/actions";
+import RadioButton from "components/RadioButton";
 
 const Home = () => {
-  const [toolsArray, setToolsArray] = useState<ITool[]>([
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-    {
-      title: "Fastify",
-      link: "https://google.com",
-      description: "É uma ferramenta ai bro",
-      tags: ["fastify", "node js", "react", "teste"],
-    },
-  ]);
+  const toolsArray = useSelector((state: { tools: ITool[] }) => state.tools);
   const [searchField, setSearchField] = useState("");
+  const [tagSearchEnabled, setTagSearchEnabled] = useState(false);
   const [addToolModalVisible, setAddToolModalVisible] = useState(false);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    async function fetchData() {
+      const reduxAction = await listTools({});
+      dispatch(reduxAction);
+    }
+    fetchData();
+    return () => {};
+  }, []);
   const StyledList = styled.div`
     overflow-y: auto;
     height: 400px;
@@ -106,12 +82,20 @@ const Home = () => {
       </div>
 
       <div className={"flex flex-col"}>
-        <div className={"flex flex-row justify-between items-end"}>
-          <Input
-            value={searchField}
-            onChange={(e: any) => setSearchField(e.target.value)}
-            placeholder={"Pesquisar"}
-          />
+        <div className={"flex flex-row justify-between items-center"}>
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-center">
+            <Input
+              value={searchField}
+              onChange={(e: any) => setSearchField(e.target.value)}
+              placeholder={"Pesquisar"}
+            />
+            <div className="mt-1 md:ml-2">
+              <RadioButton
+                description={"Pesquisar apenas tags"}
+                onChange={(checked) => setTagSearchEnabled(checked)}
+              />
+            </div>
+          </div>
 
           <Button
             intent={"Neutral"}
@@ -123,6 +107,7 @@ const Home = () => {
             </Typography>
           </Button>
         </div>
+
         <StyledList>
           {toolsArray.map((item, index) => (
             <div key={index} style={{ marginTop: 10 }}>

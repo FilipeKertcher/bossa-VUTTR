@@ -36,6 +36,7 @@ const Typography: FC<ITypography> = ({
   tag,
   children,
   variant,
+  className,
   color = "ink",
   ...restProps
 }: ITypography) => {

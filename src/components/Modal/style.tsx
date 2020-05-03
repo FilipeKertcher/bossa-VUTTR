@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ModalVariants } from "Models/modalVariants";
+import { ModalVariants } from "models/modalVariants";
 
 const returnModalVariantWidth = (variant: keyof typeof ModalVariants) => {
   const width = {
@@ -26,6 +26,8 @@ const ModalCardWrapper = styled.div`
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 16px;
+    max-height: 90%;
+    overflow-y: auto;
     width: 100%;
   }
 

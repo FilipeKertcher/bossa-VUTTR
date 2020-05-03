@@ -5,6 +5,8 @@ import mainTheme from "themes/main";
 import styled from "styled-components";
 import Routes from "routes";
 import Typography from "components/Typography";
+import { Provider } from "react-redux";
+import rootStore from "stores/rootStore";
 
 const Container = styled.div`
   background-color: ${mainTheme.colors.lighestInk};
@@ -17,11 +19,13 @@ const Container = styled.div`
 
 const App = () => {
   return (
-    <ThemeProvider theme={mainTheme}>
-      <Container>
-        <Routes />
-      </Container>
-    </ThemeProvider>
+    <Provider store={rootStore}>
+      <ThemeProvider theme={mainTheme}>
+        <Container>
+          <Routes />
+        </Container>
+      </ThemeProvider>
+    </Provider>
   );
 };
 

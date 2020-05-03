@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import Typography from "components/Typography";
 import mainTheme from "themes/main";
-import ITool from "Models/tool";
+import ITool from "models/tool";
 import { ReactComponent as CloseButton } from "assets/icons/modal_close.svg";
 import Button from "components/Button";
 import { Modal } from "components/Modal";
 import { ModalContent, ModalActions } from "components/Modal/style";
+import { removeTool } from "stores/ducks/tools/actions";
 
 interface IToolInformation {
   item: ITool;
@@ -40,13 +41,13 @@ const ToolInformation = ({ item }: IToolInformation) => {
           </div>
         </Button>
       </div>
-      <div className={"flex-row my-2"}>
+      <div className={"flex flex-wrap flex-row my-2"}>
         <Typography tag={"span"} variant={"Body"} color={"lightInk"}>
           {item.description}
         </Typography>
       </div>
-      <div className={"flex-row"}>
-        {item.tags.map((tag, index) => (
+      <div className={"flex flex-row flex-wrap"}>
+        {item.tags?.map((tag, index) => (
           <Typography
             tag={"span"}
             variant={"BodySmallest"}
@@ -85,7 +86,11 @@ const ToolInformation = ({ item }: IToolInformation) => {
                 Cancelar
               </Typography>
             </Button>
-            <Button variant={"Primary"} intent={"Danger"} onClick={() => {}}>
+            <Button
+              variant={"Primary"}
+              intent={"Danger"}
+              onClick={() => removeTool(item)}
+            >
               <Typography color={"white"} variant={"BodySmallest"} tag={"span"}>
                 Sim, remover
               </Typography>
