@@ -1,4 +1,3 @@
-import React from "react";
 const main = {
   breakpoints: ["540px", "720px", "960px", "1140px"],
   fontSizes: [16, 18, 20, 24, 26, 30, 36, 42],

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState } from "react";
 import Typography from "components/Typography";
 import mainTheme from "themes/main";
 import ITool from "models/tool";
@@ -29,10 +29,10 @@ const ToolInformation = ({ item }: IToolInformation) => {
           noPadding
         >
           <div className={"flex flex-row items-center"}>
-            <CloseButton />
+            <CloseButton style={{ height: 10, width: 10 }} />
             <Typography
               tag={"span"}
-              variant={"BodySmall"}
+              variant={"BodySmallest"}
               color={"lightInk"}
               style={{ marginLeft: 5 }}
             >

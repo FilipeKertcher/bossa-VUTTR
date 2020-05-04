@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "components/Card";
 import Typography from "components/Typography";
 import Input from "components/Input";
@@ -12,6 +12,9 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { listTools } from "stores/ducks/tools/actions";
 import RadioButton from "components/RadioButton";
+import Notification from "components/Notification";
+// @ts-ignore
+import { store } from "react-notifications-component";
 
 const Home = () => {
   const toolsArray = useSelector((state: { tools: ITool[] }) => state.tools);
@@ -25,9 +28,23 @@ const Home = () => {
       const reduxAction = await listTools({});
       dispatch(reduxAction);
     }
+
     fetchData();
+    store.addNotification({
+      content: (
+        <Notification variant={"success"}>
+          <h2>AEGOOO</h2>
+        </Notification>
+      ),
+      container: "bottom-right",
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {
+        duration: 1500,
+      },
+    });
     return () => {};
-  }, []);
+  });
   const StyledList = styled.div`
     overflow-y: auto;
     height: 400px;

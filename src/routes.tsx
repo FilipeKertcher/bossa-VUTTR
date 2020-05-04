@@ -1,26 +1,24 @@
-import { Switch, Route, Router, Redirect } from 'react-router-dom'
-import React  from "react"
+import { Switch, Route, Router, Redirect } from "react-router-dom";
+import React from "react";
 
-import HomeScreen from 'pages/Home'
-import { createBrowserHistory } from 'history'
+import HomeScreen from "pages/Home";
+import { createBrowserHistory } from "history";
 
-const history =  createBrowserHistory({
+const history = createBrowserHistory({
   /* pass a configuration object here if needed */
-})
+});
 
+const Routes = () => {
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route exact path="/">
+          <HomeScreen />
+        </Route>
+        <Route component={() => <Redirect to="/" />} />
+      </Switch>
+    </Router>
+  );
+};
 
-const Routes = ({}) => {
-    return (
-        <Router history={history}>
-            <Switch>
-                <Route exact path="/">
-                    <HomeScreen />
-                </Route>
-                <Route component={() => <Redirect to="/"/> } />
-            </Switch>
-        </Router>      
-    )
-}
-
-
-export default Routes
+export default Routes;

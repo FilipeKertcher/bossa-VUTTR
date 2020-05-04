@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, FC } from "react";
+import React, { ReactNode, FC } from "react";
 import {
   Heading1,
   Heading2,

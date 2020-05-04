@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext, ReactNode } from "react";
-import styled from "styled-components";
+import React, { ReactNode } from "react";
 import CardStyled from "./style";
 
 interface ICard {

@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useContext, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Typography from "components/Typography";
-import mainTheme from "themes/main";
-import ITool from "models/tool";
+
 import Card from "components/Card";
-import styled from "styled-components";
 import Button from "components/Button";
 import { ReactComponent as CloseButton } from "assets/icons/modal_close.svg";
 import { ModalVariants } from "models/modalVariants";

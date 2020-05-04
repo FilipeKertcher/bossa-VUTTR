@@ -4,7 +4,6 @@ import offlineConfig from "@redux-offline/redux-offline/lib/defaults";
 import rootReducer from "./rootReducer";
 import logger from "redux-logger";
 import api from "services/api";
-import { AxiosError } from "axios";
 
 const effect = (effect: any, _action: any) => api(effect);
 const discard = (error: any, _action: any, _retries: any) => {

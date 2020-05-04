@@ -1,4 +1,4 @@
-import React, { FC, useState, useContext } from "react";
+import React, { FC } from "react";
 import { InputStyled, InputWraper } from "./style";
 import Typography from "components/Typography";
 

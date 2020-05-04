@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Input from "components/Input";
 import TextArea from "components/TextArea";
 import Button from "components/Button";
@@ -6,13 +6,11 @@ import Typography from "components/Typography";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import TagInput from "components/TagInput";
-import rootStore from "stores/rootStore";
 import ITool from "models/tool";
-import { ToolsReducerActions } from "stores/ducks/tools";
 import { useDispatch } from "react-redux";
 import { addTool } from "stores/ducks/tools/actions";
 
-const AddTool = ({}) => {
+const AddTool = () => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
