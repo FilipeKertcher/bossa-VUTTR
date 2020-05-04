@@ -32,7 +32,7 @@ const Home = () => {
     fetchData();
     store.addNotification({
       content: (
-        <Notification variant={"success"}>
+        <Notification variant={"info"}>
           <h2>AEGOOO</h2>
         </Notification>
       ),
@@ -44,7 +44,7 @@ const Home = () => {
       },
     });
     return () => {};
-  });
+  }, []);
   const StyledList = styled.div`
     overflow-y: auto;
     height: 400px;

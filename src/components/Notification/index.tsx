@@ -12,21 +12,27 @@ interface INotification {
   children: ReactNode;
 }
 
-const Notification = ({ variant = "neutral" }: INotification) => {
+const Notification = ({ variant = "neutral", children }: INotification) => {
   const builtProps = {
     variant,
+  };
+
+  const returnIcon = () => {
+    const found = {
+      neutral: null,
+      warning: <WarningTagIcon fill={"#FFFFFF"} height={23} width={23} />,
+      error: <ErrorTagIcon fill={"#FFFFFF"} height={23} width={23} />,
+      success: <SuccessTagIcon fill={"#FFFFFF"} height={23} width={23} />,
+      info: <InfoIcon fill={"#FFFFFF"} height={23} width={23} />,
+    }[variant];
+
+    return found;
   };
   return (
     <StyledNotification {...builtProps}>
       <div className="flex flex-col">
-        <div className="flex flex-row">
-          <ErrorTagIcon fill={"#383838"} height={23} width={23} />
-          <SuccessTagIcon fill={"#383838"} height={23} width={23} />
-          <WarningTagIcon fill={"#383838"} height={23} width={23} />
-          <InfoIcon fill={"#383838"} height={23} width={23} />
-          <CloseIcon fill={"#383838"} height={23} width={23} />
-        </div>
-        <div></div>
+        <div className="flex flex-row">{!!returnIcon() && returnIcon()}</div>
+        <div>{children}</div>
       </div>
     </StyledNotification>
   );
